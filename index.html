@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To My Dearest Mother</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fffaf5;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card-container {
+      perspective: 1200px;
+    }
+
+    .card {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #ffe6e6, #ffccff);
+      text-align: center;
+    }
+
+    .card-front h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 26px;
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    .card-front h2 {
+      font-size: 22px;
+      color: #8e44ad;
+    }
+
+    .card-back {
+      background: #fff;
+      transform: rotateY(180deg);
+      border: 3px dashed #ffc0cb;
+      position: relative;
+    }
+
+    .card-back h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 22px;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+
+    .card-back p {
+      font-size: 15px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .card-back img {
+      margin-top: 10px;
+      max-height: 100px;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://i.imgur.com/U8VLtV3.png");
+      background-repeat: repeat;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .bow {
+      position: absolute;
+      width: 40px;
+    }
+
+    .bow.top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .bow.top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .bow.bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .bow.bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card" id="card">
+    <!-- Front Side -->
+    <div class="card-side card-front">
+      <h1>To My Dearest Mother</h1>
+      <h2>💐 Happy Mother's Day! 💐</h2>
+      <p>(Click to open)</p>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-side card-back">
+      <div class="confetti"></div>
+      <img src="https://i.imgur.com/UfbJPXn.png" class="bow top-left" />
+      <img src="https://i.imgur.com/UfbJPXn.png" class="bow top-right" />
+      <img src="https://i.imgur.com/UfbJPXn.png" class="bow bottom-left" />
+      <img src="https://i.imgur.com/UfbJPXn.png" class="bow bottom-right" />
+      <h2>Happy Mother's Day!</h2>
+      <p>You are my first teacher, my strength, and the one I turn to for everything.<br><br>
+         Thank you for always being there.<br><br>
+         <strong>"Your love is my greatest gift, and I’ll be forever grateful.”</strong>
+      </p>
+      <img src="https://i.imgur.com/h7DNeO5.png" alt="Mom-Daughter Cake" />
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('card').addEventListener('click', function () {
+    this.classList.toggle('is-flipped');
+  });
+</script>
+
+</body>
+</html>
